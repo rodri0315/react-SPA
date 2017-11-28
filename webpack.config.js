@@ -16,6 +16,21 @@ module.exports = {
           presets: ['react', 'es2015', 'stage-0'],
           plugins: ['react-html-attrs', 'transform-class-properties', 'transform-decorators-legacy'],
         }
+      },
+      {
+				test: /\.css$/,
+				loader: 'style-loader!css-loader!autoprefixer-loader'
+			},
+			{
+				test: /\.scss$/,
+				loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
+      },
+      {
+        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000
+        }
       }
     ]
   },
